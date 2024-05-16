@@ -1,4 +1,5 @@
-# VLSI-LAB-EXPERIMENTS
+# VLSI-LAB-EXPERIMENTS-01
+## SIMULATION OF LOGIC GATES ,ADDERS AND SUBTRACTORS
 ## AIM:
 To simulate and synthesis Logic Gates,Adders and Subtractor using Xilinx ISE.
 ## APPARATUS REQUIRED: 
@@ -22,37 +23,11 @@ Logic Diagram :
 
 Logic Gates:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/ee17970c-3ac9-4603-881b-88e2825f41a4)
-
-
-Half Adder:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/0e1ecb96-0c25-4556-832b-aeeedfdfe7b9)
-
-
-Full adder:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/9bb3964c-438f-469d-a3de-c1cca6f323fb)
-
-
-Half Subtractor:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/731470b7-eb4e-49f8-8bb7-2994052a7184)
-
-
-
-Full Subtractor:
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/d66f874b-c1f2-44b3-a035-7149b56430c1)
-
-
-
-8 Bit Ripple Carry Adder
-
-![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/7385a408-40a5-4203-8050-b72818622d79)
-
 ## VERILOG CODE:
-VERILOG CODE:
-LOGIC GATES: module logic(a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate );
+
+LOGIC GATES:
+
+module logic(a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate );
 
 input a,b;
 
@@ -73,8 +48,15 @@ xnor(xnorgate,a,b);
 not(notgate,a);
 
 endmodule
+## OUTPUT:
+![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/f2ab4757-cf4a-4b0d-95c3-8a6e6270d943)
+
+Half Adder:
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/0e1ecb96-0c25-4556-832b-aeeedfdfe7b9)
 
 ## HALF ADDER:
+
 module HalfAdder(a,b,sum,carry);
 
 input a,b;
@@ -86,8 +68,14 @@ xor (sum,a,b);
 and (carry,a,b);
 
 endmodule
+## HALF ADDER:
+![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/4a13f815-175f-4782-b615-e3b11978f475)
+Full adder:
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/9bb3964c-438f-469d-a3de-c1cca6f323fb)
 
 ## FULL ADDER:
+
 module FA(a,b,cin,sum,cout);
 
 input a,b,cin;
@@ -107,6 +95,32 @@ xor g4(sum,w1,cin);
 or g5(cout,w2,w3);
 
 endmodule
+
+## FULL ADDER:
+![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/fae142fb-c32a-40d9-9de0-a90d08509d93)
+Half Subtractor:
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/731470b7-eb4e-49f8-8bb7-2994052a7184)
+
+## HALF SUBTRACTOR:
+
+module halfsubtractor(a,b,diff,borrow);
+
+input a,b;
+
+output diff,borrow;
+
+xor g1(diff,a,b);
+
+and g2(borrow,~a,b);
+
+endmodule
+
+## HALF SUBTRACTOR:
+![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/f88d0c43-ec5a-4f3c-ace7-5cc0dbd5b379)
+Full Subtractor:
+
+![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/d66f874b-c1f2-44b3-a035-7149b56430c1)
 
 ## FULL SUBTRACTOR:
 module full_sub(a,b,bin,diff,borrow);
@@ -129,18 +143,12 @@ and g5(w3,~w1,bin);
 
 endmodule
 
-## HALF SUBTRACTOR:
-module halfsubtractor(a,b,diff,borrow);
+## FULL SUBTRACTOR:
+![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/d2875894-3bce-4d29-904c-9859ab2e39b8)
 
-input a,b;
+8 Bit Ripple Carry Adder
 
-output diff,borrow;
-
-xor g1(diff,a,b);
-
-and g2(borrow,~a,b);
-
-endmodule
+![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/7385a408-40a5-4203-8050-b72818622d79)
 
 ## 8 BIT RIPPLE CARRY ADDER:
 module fa(a,b,c,sum,carry);
@@ -183,15 +191,6 @@ fa fa8(a[7],b[7],c7,sum[7],cout);
 
 endmodule
 ## OUTPUT:
-![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/f2ab4757-cf4a-4b0d-95c3-8a6e6270d943)
-## HALF ADDER:
-![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/4a13f815-175f-4782-b615-e3b11978f475)
-## FULL ADDER:
-![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/fae142fb-c32a-40d9-9de0-a90d08509d93)
-## HALF SUBTRACTOR:
-![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/f88d0c43-ec5a-4f3c-ace7-5cc0dbd5b379)
-## FULL SUBTRACTOR:
-![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/d2875894-3bce-4d29-904c-9859ab2e39b8)
 ## 8 BIT RIPPLE CARRY ADDER:
 ![image](https://github.com/SuryaChakradhar/VLSI-LAB-EXP-2/assets/161815325/6cf77903-b164-4b54-82ec-2fb544eb435e)
 ## RESULT:
